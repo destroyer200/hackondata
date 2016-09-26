@@ -1,3 +1,0 @@
-City of Toronto Transportation Services (Pedestrian Projects team)
-
-The city is planning to put ‘map assets’ (i.e. digital billboard maps) throughout the city indicating nearby attractions within a certain distance. A prototype unit has already been deployed near city hall in a test. The challenge is to use demographic / mapping data to determine the optimal location for new map assets to be rolled out.
