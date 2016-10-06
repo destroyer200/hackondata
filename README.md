@@ -129,16 +129,20 @@ Among the four aspects of the multi-modal wayfinding strategy, we focus on the *
 
 
 # 5 Future Improvement
-There is a lot we can do to improve our current soltuion. 
+There is a lot we can do to improve our current soltuion.
+
 1. Explore other methodologies. Clustering is only one of the possible methodolgies that may lead to a solution. We can also try other methodologies and compare the results. Formulating the problem as an optimization problem is a worth trying direction. Or we can combine clustering and optimization by applying optimization to each clusters.
+
 2. Using more point of interest data. In our current study, we only used 1397 cultural facilities for building our solution. There is a lot more point of interest(such as hospitals, colleges or universities, attractions, commerical areas, etc.) we need to incorporate to make the study representative.
+
 3. Consider more needs when choose an intersection for map placment. In our current study, we considered distance and pedestrian volume. Other needs we should consider include:
   * having high densities of visitors who are unfamiliar with the City
   * having changes in mode of travel
   * being on a main street
   * being in an area that is difficult to navigate
   * being close to hospitals, colleges or universities
-  * being close to a city center   
+  * being close to a city center  
+  
 4. Insights from domain experts. City planners have more practical insights on whether an intersection is appropriate for map placement. We can improve our solution by taking advices from domain experts.
 
 
