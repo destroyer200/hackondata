@@ -9,7 +9,7 @@ Qian(John) Xie, Roland Sing, and Mingfei Cao
 **Sponsers**  
 TranQuant, flipp, wattpad, LoyaltyOne, amazon, Lightbend, GuruLink, Shopify
 
-** Partners**  
+**Partners**  
 Toronto Apache Spark, scalator, Deep Learning Toronto, HackerNest, HacherNest Toronto Tech Socials, TechToronto, DMZ, City of Toronto, Toronto Public Library
 
 
@@ -20,31 +20,31 @@ Toronto Apache Spark, scalator, Deep Learning Toronto, HackerNest, HacherNest To
 
 ## 1.1 Background and Motivation
 
-In 2011, City of Toronto launched the TO360 Wayfinding Project. The integrated multi-modal wayfinding strategy is comprised of pedestrian, vehicular, cyclying and transit wayfinding. The project is aimed to:
-* Enhance the overall image of Tornto as a destination
-* Increase visitors at key attractions, spending in the Greater Toronto Area, boost the local econnomy
+In 2011, City of Toronto launched the TO360 Wayfinding Project. The integrated multi-modal wayfinding strategy is comprised of pedestrian, vehicular, cycling and transit wayfinding. The project is aimed to:
+* Enhance the overall image of Toronto as a destination
+* Increase visitors at key attractions, spending in the Greater Toronto Area, boost the local economy
 * Increase confidence to walk, reduce walk times, promote multi-modal transit and reduce auto use
 * Improve urban realm, sense of community, pedestrian safety, health and environment
 
 The project is implemented in three phases:  
 * Phase 1: Wayfinding strategies (2011 - 2012)
-* Phase 2: Pilot implementation  (2014 - 2015)
+* Phase 2: Pilot implementation (2014 - 2015)
 * Phase 3: City-wide roll out   (2016 - 2017)
 
 Right now, the project in in phase 3. In determining where wayfinding products are required, a number of factors were considered:
 
 **Existing Need** - The implementation strategy prioritizes areas where a need for wayfinding currently exists based on:  
 * having high densities of visitors who are unfamiliar with the city
-* having high pedestrian volumnes
+* having high pedestrian volumes
 * having changes in mode of travel
 * being on a main street
 * being an area that is difficult to navigate
 * being close to hospitals, colleges or universities
 * being close to a city centre
 
-** Available Funding** - Further, certain areas may be prioritized as project partners come forward with funding to implement the schem.  Potential project partners include:  
+** Available Funding** - Further, certain areas may be prioritized as project partners come forward with funding to implement the scheme.  Potential project partners include:  
 * transit agencies
-* Business Improvment Areas
+* Business Improvement Areas
 * universities and health care campuses
 * attractions
 * city divisions
@@ -58,7 +58,7 @@ For the **HackOn(Data)** event, City of Toronto have an interest in exploring a 
 
 
 ## 1.3 Our Approach
-We choose an expoloratory approach for this problem. We are not aiming to find a "perfect" solution by considering all needs and using all the available data. Instead, our goal is to build a prototype model using the a few of the most important data sources(provided by [TranQuant](http://tranquant.com/) and [City of Toronto Open Data](http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=9e56e03bb8d1e310VgnVCM10000071d60f89RCRD)). If we can gain insights from the solution and the methodology is actionable, we can refine the prototype methodology by taking into consideration more needs, incooporating more data sources, and using more advanced algorithms.
+We choose an exploratory approach for this problem. We are not aiming to find a "perfect" solution by considering all needs and using all the available data. Instead, our goal is to build a prototype model using the a few of the most important data sources (provided by [TranQuant](http://tranquant.com/) and [City of Toronto Open Data](http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=9e56e03bb8d1e310VgnVCM10000071d60f89RCRD)). If we can gain insights from the solution and the methodology is actionable, we can refine the prototype methodology by taking into consideration more needs, incorporating more data sources, and using more advanced algorithms.
 
 Among the four aspects of the multi-modal wayfinding strategy, we focus on the **pedestrian wayfinding**. We chose to analyze two datasets from the City of Toronto, available on TranQuant:  
 * Cultural Spaces: This dataset is a compilation of all spaces within the 44 City wards that were available for cultural use for a five year period.
@@ -129,13 +129,13 @@ Among the four aspects of the multi-modal wayfinding strategy, we focus on the *
 
 
 # 5 Future Improvement
-There is a lot we can do to improve our current soltuion.
+There is a lot we can do to improve our current solution.
 
-1. Explore other methodologies. Clustering is only one of the possible methodolgies that may lead to a solution. We can also try other methodologies and compare the results. Formulating the problem as an optimization problem is a worth trying direction. Or we can combine clustering and optimization by applying optimization to each clusters.
+1. Explore other methodologies. Clustering is only one of the possible methodologies that may lead to a solution. We can also try other methodologies and compare the results. Formulating the problem as an optimization problem is a worth trying direction. Or we can combine clustering and optimization by applying optimization to each clusters.
 
-2. Using more point of interest data. In our current study, we only used 1397 cultural facilities for building our solution. There is a lot more point of interest(such as hospitals, colleges or universities, attractions, commerical areas, etc.) we need to incorporate to make the study representative.
+2. Using more point of interest data. In our current study, we only used 1397 cultural facilities for building our solution. There is a lot more point of interest (such as hospitals, colleges or universities, attractions, commercial areas, etc.) we need to incorporate to make the study representative.
 
-3. Consider more needs when choose an intersection for map placment. In our current study, we considered distance and pedestrian volume. Other needs we should consider include:
+3. Consider more needs when choose an intersection for map placement. In our current study, we considered distance and pedestrian volume. Other needs we should consider include:
   * having high densities of visitors who are unfamiliar with the City
   * having changes in mode of travel
   * being on a main street
