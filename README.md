@@ -120,7 +120,7 @@ Among the four aspects of the multi-modal wayfinding strategy, we focus on the *
 
 ## 4.1 Only Consider Distance
 
-![Selected Intersections for Map Placement When Only Consider Distance](./images/Selected_intersections_dist_only.png)
+![Selected Intersections for Map Placement When Only Consider Distance](./images/selected_intersections_dist_only.png)
 
 ## 4.2 Consider Distance and Pedestrian Volume
 
@@ -138,7 +138,7 @@ There is a lot we can do to improve our current soltuion.
   * being on a main street
   * being in an area that is difficult to navigate
   * being close to hospitals, colleges or universities
-  * being close to a city centre  
+  * being close to a city center   
 4. Insights from domain experts. City planners have more practical insights on whether an intersection is appropriate for map placement. We can improve our solution by taking advices from domain experts.
 
 
