@@ -194,7 +194,7 @@ The citywide roll-out of the map placement will be implemented through a 3-year 
 * Year 2: Focused roll-out of TO360 map in and around main streets, BIAs and transit hubs
 * Year 3: Citywide roll-out of TO360 map
 
-![Phases](./images/phase_implementation.png)
+![Phases](./images/phase_implementation.PNG)
 
 DBSCAN algorithm can help to select the facilities for each phase of implementation.
 
