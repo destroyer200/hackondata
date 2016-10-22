@@ -2,13 +2,12 @@
 # Toronto Apache Spark [HackOn(Data)](http://hackondata.com/) Event 2016
 **--1st Place Winner Solution - Map Placement for City of Toronto TO360 Wayfinding Project**
 
-<<<<<<< HEAD
 Qian(John) Xie, Mingfei Cao, and Roland Sing
 =======
 <a href="http://nbviewer.jupyter.org/github/XIEQ/hackondata/blob/master/Map_Placement_City_of_Toronto.ipynb">complete solution</a>
 
 Qian(John) Xie, Roland Sing, and Mingfei Cao
->>>>>>> 0e7217fb2ba0787b99fe1a6984be18ea833a8345
+
 
 **[HackOnData](http://hackondata.com/)** is a free two-day event that brings together the Toronto data community to take a closer look at the data that touches our daily lives. Teams of Toronto's passionate data scientists and data engineers collaborated to generate practical insights from data provided by local companies, not-for profits and the government. Prior to the event, eight weekly workshops and challenges helped prepare participants by giving them the knowledge and hands-on experience required to ensure they can meaningfully participate. During the event, well-known mentors from Toronto and around the world engaged with participants to take their knowledge and skill to the next level. HackOn(Data) is the best platform available to local data talent and businesses to meet, collaborate, and exchange knowledge and experience!
 
