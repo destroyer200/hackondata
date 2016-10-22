@@ -24,15 +24,43 @@
 
 <p><strong>--1st Place Winner Solution - Map Placement for City of Toronto TO360 Wayfinding Project</strong></p>
 
-<p>Qian(John) Xie, Roland Sing, and Mingfei Cao</p>
+<p>Qian(John) Xie, Mingfei Cao, and Roland Sing</p>
 
-<p><strong><a href="http://hackondata.com/">HackOnData</a></strong> is a free two-day event that brings together the Toronto data community to take a closer look at the data that touches our daily lives. Teams of Toronto's top data scientists and data engineers collaborated to generate practical insights from data provided by local companies, not-for profits and the government. Prior to the event, weekly workshops and challenges will help prepare participants by giving them the knowledge and hands-on experience required to ensure they can meaningfully participate. During the event, well-known mentors from Toronto and around the world engaged with participants to take their knowledge and skill to the next level. HackOn(Data) is the best platform available to local data talent and businesses to meet, collaborate, and exchange knowledge, experience and job opportunities!</p>
+<p><strong><a href="http://hackondata.com/">HackOnData</a></strong> is a free two-day event that brings together the Toronto data community to take a closer look at the data that touches our daily lives. Teams of Toronto's passionate data scientists and data engineers collaborated to generate practical insights from data provided by local companies, not-for profits and the government. Prior to the event, eight weekly workshops and challenges will help prepare participants by giving them the knowledge and hands-on experience required to ensure they can meaningfully participate. During the event, well-known mentors from Toronto and around the world engaged with participants to take their knowledge and skill to the next level. HackOn(Data) is the best platform available to local data talent and businesses to meet, collaborate, and exchange knowledge and experience.</p>
 
 <p><strong>Sponsers</strong><br>
 TranQuant, flipp, wattpad, LoyaltyOne, amazon, Lightbend, GuruLink, Shopify</p>
 
 <p><strong>Partners</strong><br>
 Toronto Apache Spark, scalator, Deep Learning Toronto, HackerNest, HacherNest Toronto Tech Socials, TechToronto, DMZ, City of Toronto, Toronto Public Library</p>
+
+<h1>
+<a id="0-solution-notebooks" class="anchor" href="#0-solution-notebooks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>0 Solution Notebooks</h1>
+
+<p>The solution is implemented in both Python and Spark (PySpark API). The solution notebooks are publicly availabel on my Github repository and on Databricks.</p>
+
+<ul>
+<li>
+<p>Python Solution</p>
+
+<ul>
+<li><a href="http://nbviewer.jupyter.org/github/XIEQ/hackondata/blob/master/Map_Placement_City_of_Toronto.ipynb"> View complete solution notebook through nbviewer</a></li>
+<li><a href="https://github.com/XIEQ/hackondata/blob/master/Map_Placement_City_of_Toronto.ipynb">Python solution notebook on my Github</a></li>
+</ul>
+</li>
+<li>
+<p>Spark solution was done using Databricks Community Edition, and the Databricks notebooks are available here:</p>
+
+<ul>
+<li><a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8891646194974755/2498144867240658/6439822263820045/latest.html">Databricks Notebook 0: Project Overview</a></li>
+<li><a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8891646194974755/2498144867240604/6439822263820045/latest.html">Databricks Notebook 1: Data Preparation</a></li>
+<li><a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8891646194974755/2498144867240997/6439822263820045/latest.html">Databricks Notebook 2: Exploratory Analysis</a></li>
+<li><a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8891646194974755/2498144867240775/6439822263820045/latest.html">Databricks Notebook 3: DBSCAN Clustering</a></li>
+<li><a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8891646194974755/2498144867240858/6439822263820045/latest.html">Databricks Notebook 4: KMeans Clustering</a></li>
+<li><a href="https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8891646194974755/2498144867240666/6439822263820045/latest.html">Databricks Notebook 5: Map Placement Based on Clustering</a></li>
+</ul>
+</li>
+</ul>
 
 <h1>
 <a id="1-project-overview" class="anchor" href="#1-project-overview" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1 Project Overview</h1>
@@ -71,7 +99,7 @@ Toronto Apache Spark, scalator, Deep Learning Toronto, HackerNest, HacherNest To
 <li>being close to a city center</li>
 </ul>
 
-<p>** Available Funding** - Further, certain areas may be prioritized as project partners come forward with funding to implement the scheme.  Potential project partners include:  </p>
+<p><strong>Available Funding</strong> - Further, certain areas may be prioritized as project partners come forward with funding to implement the scheme.  Potential project partners include:  </p>
 
 <ul>
 <li>transit agencies</li>
@@ -126,8 +154,10 @@ Toronto Apache Spark, scalator, Deep Learning Toronto, HackerNest, HacherNest To
 The same data was provided in three formats</p>
 
 <ul>
-<li><p><code>MSFC_44_Wards_Complete_Final.csv</code>: List of cultural facilities in Toronto. The file consists of the name of the facility, address, ward information, ownership of facilities that are available on a rental basis for cultural events. The two accompanying documents <code>MSFC_Readme_1.csv</code> and <code>MSFC_Readme_2.csv</code> give detailed describe the contents of the file and the schema(columns) of the file. The <code>MSFC_44_Wards_Complete_Final.csv</code> only provides postal code, no coordinates for facility. </p></li>
-<li><p><code>Make_space_for_culture_mtm3.zip</code>:  with shape files of MTM 3 coordinate system and facility file <code>MAKE_SPACE_FOR_CULTURE.dbf</code>, which contains coordinates for facilities. </p></li>
+<li>
+<code>MSFC_44_Wards_Complete_Final.csv</code>: List of cultural facilities in Toronto. The file consists of the name of the facility, address, ward information, ownership of facilities that are available on a rental basis for cultural events. The two accompanying documents <code>MSFC_Readme_1.csv</code> and <code>MSFC_Readme_2.csv</code> give detailed describe the contents of the file and the schema(columns) of the file. The <code>MSFC_44_Wards_Complete_Final.csv</code> only provides postal code, no coordinates for facility.</li>
+<li>
+<code>Make_space_for_culture_mtm3.zip</code>:  with shape files of MTM 3 coordinate system and facility file <code>MAKE_SPACE_FOR_CULTURE.dbf</code>, which contains coordinates for facilities. </li>
 <li>
 <code>Make_space_for_culture_wgs84.zip</code>: with shape files for WGS84 coordinate system and facility file <code>MAKE_SPACE_FOR_CULTURE_WGS84.dbf</code>, which contains coordinates for facilities.</li>
 </ul>
@@ -137,46 +167,175 @@ The same data was provided in three formats</p>
 <h1>
 <a id="3-exploratory-data-analysis" class="anchor" href="#3-exploratory-data-analysis" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3 Exploratory Data Analysis</h1>
 
+<h2>
+<a id="31-pedestrian-and-vehicle-volume-distribution" class="anchor" href="#31-pedestrian-and-vehicle-volume-distribution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.1 Pedestrian and Vehicle Volume Distribution</h2>
+
+<p>In this section, we will check intersection pedestrian and vehicle volume distribution to see what pattern they follows or to see whether there is any <code>interesting</code> behavior in the data.</p>
+
+<h4>
+<a id="pedestrian-volume-distribution" class="anchor" href="#pedestrian-volume-distribution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pedestrian Volume Distribution</h4>
+
+<p><img src="images/Ped_vol_dist.png" alt="Pedestrian Volume Distribution"></p>
+
+<h4>
+<a id="vehicle-volume-distribution" class="anchor" href="#vehicle-volume-distribution" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Vehicle Volume Distribution</h4>
+
+<p><img src="images/Veh_vol_dist.png" alt="Intersections"></p>
+
 <h4>
 <a id="intersections" class="anchor" href="#intersections" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Intersections</h4>
 
-<p><img src="images/intersections.png" alt="Intersections"></p>
+<p><img src="images/intersections.png" alt="Intersections">
+From the graph, we can see the shape of the City of Toronto and main street and how the intersections are distributed geographically.</p>
 
 <h4>
 <a id="cultural-facilities" class="anchor" href="#cultural-facilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Cultural Facilities</h4>
 
-<p><img src="images/facilities.png" alt="Facilities"></p>
+<p><img src="images/facilities.png" alt="Facilities">
+This graph shows us the geographic distribution of cultural facilities according to their coordinates. It is no surprise that cultural facilities are condensed in downtown area of the City of Toronto.</p>
 
 <h2>
 <a id="31-dbscan-clustering" class="anchor" href="#31-dbscan-clustering" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.1 DBSCAN Clustering</h2>
 
-<p><img src="images/DBSCAN_1.5.png" alt="DBSCAN eps = 1.5 km"></p>
+<p>We first tried <a href="http://scikit-learn.org/stable/modules/clustering.html#dbscan">DBSCAN</a> algorithm in <code>scikit-learn</code> for clustering. DBSCAN is base on the paper:</p>
 
-<p><img src="images/DBSCAN_1.0.png" alt="DBSCAN eps = 1.0 km"></p>
+<ul>
+<li>“A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise” Ester, M., H. P. Kriegel, J. Sander, and X. Xu, In Proceedings of the 2nd International Conference on Knowledge Discovery and Data Mining, Portland, OR, AAAI Press, pp. 226–231. 1996</li>
+</ul>
 
-<p><img src="images/DBSCAN_0.7.png" alt="DBSCAN eps = 0.7 km"></p>
+<p>This algorithm is aimed for spatial data, which might be a good fit for our case.</p>
+
+<p>The following is a description of DBSCAN algorithm from sklearn:  </p>
+
+<blockquote>
+<p>The DBSCAN algorithm views clusters as areas of high density separated by areas of low density. Due to this rather generic view, clusters found by DBSCAN can be any shape, as opposed to k-means which assumes that clusters are convex shaped. The central component to the DBSCAN is the concept of core samples, which are samples that are in areas of high density. A cluster is therefore a set of core samples, each close to each other (measured by some distance measure) and a set of non-core samples that are close to a core sample (but are not themselves core samples). There are two parameters to the algorithm, <code>min_samples</code> and <code>eps</code>, which define formally what we mean when we say dense. Higher <code>min_samples</code> or lower <code>eps</code> indicate higher density necessary to form a cluster.</p>
+</blockquote>
+
+<p>DBSCAN algorithm clusters dataset based on two parameters:</p>
+
+<ul>
+<li><p><strong>eps</strong> - The max distance between neighbor points to be considered in a cluster</p></li>
+<li><p><strong>min_samples</strong> - the minimum cluster size. If it is set to 1, it means every data point will be assigned to either a cluster or form its own cluster of 1 data point. If <code>min_sample</code> is set to be larger than one, then cluster with size less than min_sample will be considered as noise.</p></li>
+</ul>
+
+<p>The scikit-learn DBSCAN haversine distance metric requires data in the form of [latitude, longitude] and both inputs and outputs are in units of radians.</p>
+
+<h4>
+<a id="choose-parameters-for-dbscan-clustering-algorithm" class="anchor" href="#choose-parameters-for-dbscan-clustering-algorithm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Choose Parameters for DBSCAN clustering algorithm</h4>
+
+<p>Since in our facility dataset, we need to consider all facilities, we don't want any of them to be classified as noise, so we set <code>min_samples</code>=1. Now our clustering will depend on a proper <code>eps</code> value.</p>
+
+<p>Let's try esp = 1.5, 1.0, 0.7 (km)</p>
+
+<p>Note that <code>eps</code> need to be converted to radians for use by harversine</p>
+
+<h3>
+<a id="321-dbscan-clustering-with-eps--15-km" class="anchor" href="#321-dbscan-clustering-with-eps--15-km" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.2.1 DBSCAN Clustering with eps = 1.5 km</h3>
+
+<p><img src="images/DBSCAN_1.5.png" alt="DBSCAN eps = 1.5 km"><br>
+As we can see when we set eps = 1.5, the DBSCAN algorithm groups the cultural facilities into 20 clusters based on their geographic coordinates. The figure further proved the concept that:</p>
+
+<blockquote>
+<p>"DBSCAN algorithm views clusters as areas of high density separated by areas of low density. Due to this rather generic view, clusters found by DBSCAN can be any shape, as opposed to k-means which assumes that clusters are convex shaped."</p>
+</blockquote>
+
+<p>Obviously, 20 cluster is not enough. We need a lot more than 20 intersections to place map. Let's adjust the <code>eps</code> parameter and see what result we can get.</p>
+
+<h3>
+<a id="322-dbscan-clustering-with-eps--07-km" class="anchor" href="#322-dbscan-clustering-with-eps--07-km" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.2.2 DBSCAN Clustering with eps = 0.7 km</h3>
+
+<p><img src="images/DBSCAN_1.0.png" alt="DBSCAN eps = 1.0 km"><br>
+When we set eps = 0.7, the DBSCAN algorithm groups the facilities into 185 clusters. From the plot we can clearly see that the core of downtown is a huge cluster, accounting for more than half of all facilities, while most other cluster only has one facility. This is not a reasonable clustering that we can base on to put maps. Let's try eps = 1.0 km and see if we can get a reasonable result.</p>
+
+<h3>
+<a id="323-dbscan-clustering-with-eps--10-km" class="anchor" href="#323-dbscan-clustering-with-eps--10-km" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.2.3 DBSCAN Clustering with eps = 1.0 km</h3>
+
+<p><img src="images/DBSCAN_0.7.png" alt="DBSCAN eps = 0.7 km"><br>
+With eps = 1.0 km, the DBSCAN algorithm groups the facilities into 93 clusters. Again, downtown and middle down facilities are in the same huge cluster, and other facilities are rather nicely grouped. Based on these findings we learned that DBSCAN alone is not good enough for our needs, but it can be used to select the areas where facilities are dense and help implement a phase-wise plan for rolling out maps throughout the City of Toronto.</p>
 
 <h2>
-<a id="32-kmeans-clustering" class="anchor" href="#32-kmeans-clustering" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.2 KMeans Clustering</h2>
+<a id="33-dbscan-for-phase-wise-implementation" class="anchor" href="#33-dbscan-for-phase-wise-implementation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.3 DBSCAN for Phase-wise Implementation</h2>
 
-<p><img src="images/Kmeans_200.png" alt="KMeans 200 clusters"></p>
+<p>The citywide roll-out of the map placement will be implemented through a 3-year plan as shown in the following map. </p>
 
-<p><img src="images/Kmeans_300.png" alt="KMeans 300 clusters"></p>
+<ul>
+<li>Year 1: Complete TO360 roll-out within Core of Downtown Toronto</li>
+<li>Year 2: Focused roll-out of TO360 map in and around main streets, BIAs and transit hubs</li>
+<li>Year 3: Citywide roll-out of TO360 map</li>
+</ul>
 
-<p><img src="images/fac_centroids_and_intersections.png" alt="Facility Centroids and Intersections"></p>
+<p><img src="/images/phase_implementation.PNG" alt="Phase-wise implementation"><br>
+DBSCAN algorithm can help to select the facilities for each phase of implementation.</p>
+
+<h3>
+<a id="331-downtown-and-mainstreet-facilities" class="anchor" href="#331-downtown-and-mainstreet-facilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.3.1 Downtown and Mainstreet Facilities</h3>
+
+<p>Downtown cluster is very condensed, it includes 1064 facilities out of the total 1397 facilities. Let's extract Downtown facilities based on previous DBSCAN clustering(eps = 1.0 km)<br>
+<img src="/images/downtown_facilities.png" alt="Downtown Facilities">  </p>
+
+<h3>
+<a id="332-downtown-facilities-clustering" class="anchor" href="#332-downtown-facilities-clustering" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.3.2 Downtown Facilities Clustering</h3>
+
+<p>Set eps = 0.4 km to further clustering downtown facilities, and then extract core downtown facilities based on DBSCAN clustering result.<br>
+<img src="/images/downtown_DBSCAN_0.4.png" alt="Downtown Clustering">  </p>
+
+<h3>
+<a id="333-extract-core-downtown-facilities" class="anchor" href="#333-extract-core-downtown-facilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.3.3 Extract Core Downtown Facilities</h3>
+
+<p><img src="/images/core_downtown_facilities.png" alt="Core Downtown Facilites"><br>
+There are 655 facilities in the core of downtown Toronto</p>
+
+<p>Now, we have three groups of facilities: core downtown facilities, downtown and main streets facilities, and out of core facilities. With these three groups of facilities, we can implement the 3 year phase-wise plan for map roll-out. For each group of facilities we can then use KMeans clustering algorithm to further clustering them into small groups and then we can put a map near the centroid of each cluster of facilities.</p>
+
+<p><strong>Note</strong><br>
+In current solution, we did not applied KMeans clustering to each of the three groups. Instead, we applied KMeans to the entire facility dataset to make a quick prototype. In future improvement, we can apply KMeans clustering to each of the three groups of facilities.</p>
+
+<h2>
+<a id="34-kmeans-clustering" class="anchor" href="#34-kmeans-clustering" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.4 KMeans Clustering</h2>
+
+<p>In this section, we use KMeans clustering algorithm to group cultural facilities according to their geographic coordinates.</p>
+
+<p><strong>Note</strong><br>
+Here we apply KMeans clustering to the entire facility dataset to get a general idea of how KMeans algorithm works for our problem. </p>
+
+<h3>
+<a id="341-kmeans-clustering-with-200-clusters" class="anchor" href="#341-kmeans-clustering-with-200-clusters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.4.1 KMeans Clustering with 200 Clusters</h3>
+
+<p><img src="images/Kmeans_200.png" alt="KMeans 200 clusters">
+From the above plot we can see that 200 clusters might not be enough because the distance a map needs to cover is too long.</p>
+
+<h3>
+<a id="342-kmeans-clustering-with-300-clusters" class="anchor" href="#342-kmeans-clustering-with-300-clusters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.4.2 KMeans Clustering with 300 Clusters</h3>
+
+<p><img src="images/Kmeans_300.png" alt="KMeans 300 clusters">
+We will use 300 clusters as the prototype for later selection of intersections for map placement.</p>
+
+<p>The following is plot of intersections and the 300 facility cluster centroids. The small blue dots represent intersections, the big black dots represent facility cluster centroids. Our goal now is to find the closet intersection for each cluster centroid. We are going to find a proper intersection for each of the centroid to place map.<br>
+<img src="images/fac_centroids_and_intersections.png" alt="Facility Centroids and Intersections"></p>
 
 <h1>
 <a id="4-selected-intersections-for-map-placement" class="anchor" href="#4-selected-intersections-for-map-placement" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4 Selected Intersections for Map Placement</h1>
 
-<h2>
-<a id="41-only-consider-distance" class="anchor" href="#41-only-consider-distance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.1 Only Consider Distance</h2>
+<p>Now we have 300 facilities clusters and their centroids, our goal is to find an appropriate intersection to place map for each facility cluster as shown in the following plot. </p>
 
-<p><img src="images/selected_intersections_dist_only.png" alt="Selected Intersections for Map Placement When Only Consider Distance"></p>
+<p>We compared two cases:<br>
+<strong>Case 1</strong>: Select the intersection that is closest to the centroid of a cluster<br>
+<strong>Case 2</strong>: Select the three closest intersections to  the centroid of a cluster, then among the three the closest intersections, we select the one with the highest pedestrian volume.</p>
+
+<p><strong>KDTree Algorithm</strong><br>
+To find the closest intersection to a cluster centroid, we will use KDTree algorithm.</p>
+
+<h2>
+<a id="41-case1-only-consider-distance" class="anchor" href="#41-case1-only-consider-distance" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.1 Case1: Only Consider Distance</h2>
+
+<p><img src="images/selected_intersections_dist_only.png" alt="Selected Intersections for Map Placement When Only Consider Distance">
+If we only consider distance, the average 8 hour pedestrian volume is 11246.8 for the select 296 intersections</p>
 
 <h2>
 <a id="42-consider-distance-and-pedestrian-volume" class="anchor" href="#42-consider-distance-and-pedestrian-volume" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4.2 Consider Distance and Pedestrian Volume</h2>
 
-<p><img src="images/selected_intersections_dist_vol.png" alt="Selected Intersections for Map Placement When Consider Distance and Pedestrian Volume"></p>
+<p><img src="images/selected_intersections_dist_vol.png" alt="Selected Intersections for Map Placement When Consider Distance and Pedestrian Volume">
+If we consider both distance and pedestrian volume, the average 8 hour pedestrian volume is 16004.4 for the selected 286 intersections. In other words intersections selected by this method has in average 4758 more pedestrian volume or 42% pedestrian volume in 8 Hour period compare to the intersection selected only considering distance. This is a huge difference. Therefore, we will select intersections using the second method, which considers both distance and pedestrian volume.</p>
 
 <h1>
 <a id="5-future-improvement" class="anchor" href="#5-future-improvement" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5 Future Improvement</h1>
