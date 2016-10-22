@@ -4,9 +4,6 @@
 
 Qian(John) Xie, Mingfei Cao, and Roland Sing
 =======
-<a href="http://nbviewer.jupyter.org/github/XIEQ/hackondata/blob/master/Map_Placement_City_of_Toronto.ipynb"> View complete solution notebook through nbviewer</a>
-
-Qian(John) Xie, Roland Sing, and Mingfei Cao 
 
 **[HackOnData](http://hackondata.com/)** is a free two-day event that brings together the Toronto data community to take a closer look at the data that touches our daily lives. Teams of Toronto's passionate data scientists and data engineers collaborated to generate practical insights from data provided by local companies, not-for profits and the government. Prior to the event, eight weekly workshops and challenges helped prepare participants by giving them the knowledge and hands-on experience required to ensure they can meaningfully participate. During the event, well-known mentors from Toronto and around the world engaged with participants to take their knowledge and skill to the next level. HackOn(Data) is the best platform available to local data talent and businesses to meet, collaborate, and exchange knowledge and experience!
 
@@ -22,7 +19,8 @@ Toronto Apache Spark, scalator, Deep Learning Toronto, HackerNest, HacherNest To
 The solution is implemented in both Python and Spark (PySpark API). The solution notebooks are publicly availabel on my Github repository and on Databricks.
 
 * Python Solution
-  - [Python Solution on my Github](https://github.com/XIEQ/hackondata/blob/master/Map_Placement_City_of_Toronto.ipynb)
+  - [Python Solution Notebook on my Github](https://github.com/XIEQ/hackondata/blob/master/Map_Placement_City_of_Toronto.ipynb)
+  - <a href="http://nbviewer.jupyter.org/github/XIEQ/hackondata/blob/master/Map_Placement_City_of_Toronto.ipynb"> Or you can view complete solution notebook through nbviewer</a>
   
 * Spark solution was done using Databricks Community Edition, and the Databricks notebooks are available here:
   - [Databricks Notebook 0: Project Overview](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8891646194974755/2498144867240658/6439822263820045/latest.html)
