@@ -264,25 +264,25 @@ With eps = 1.0 km, the DBSCAN algorithm groups the facilities into 93 clusters. 
 <li>Year 3: Citywide roll-out of TO360 map</li>
 </ul>
 
-<p><img src="/images/phase_implementation.PNG" alt="Phase-wise implementation"><br>
+<p><img src="images/phase_implementation.PNG" alt="Phase-wise implementation"><br>
 DBSCAN algorithm can help to select the facilities for each phase of implementation.</p>
 
 <h3>
-<a id="331-downtown-and-mainstreet-facilities" class="anchor" href="#331-downtown-and-mainstreet-facilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.3.1 Downtown and Mainstreet Facilities</h3>
+<a id="331-downtown-and-main-street-facilities" class="anchor" href="#331-downtown-and-main-street-facilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.3.1 Downtown and Main street Facilities</h3>
 
 <p>Downtown cluster is very condensed, it includes 1064 facilities out of the total 1397 facilities. Let's extract Downtown facilities based on previous DBSCAN clustering(eps = 1.0 km)<br>
-<img src="/images/downtown_facilities.png" alt="Downtown Facilities">  </p>
+<img src="images/downtown_facilities.png" alt="Downtown Facilities">  </p>
 
 <h3>
 <a id="332-downtown-facilities-clustering" class="anchor" href="#332-downtown-facilities-clustering" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.3.2 Downtown Facilities Clustering</h3>
 
 <p>Set eps = 0.4 km to further clustering downtown facilities, and then extract core downtown facilities based on DBSCAN clustering result.<br>
-<img src="/images/downtown_DBSCAN_0.4.png" alt="Downtown Clustering">  </p>
+<img src="images/downtown_DBSCAN_0.4.png" alt="Downtown Clustering">  </p>
 
 <h3>
 <a id="333-extract-core-downtown-facilities" class="anchor" href="#333-extract-core-downtown-facilities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.3.3 Extract Core Downtown Facilities</h3>
 
-<p><img src="/images/core_downtown_facilities.png" alt="Core Downtown Facilites"><br>
+<p><img src="images/core_downtown_facilities.png" alt="Core Downtown Facilites"><br>
 There are 655 facilities in the core of downtown Toronto</p>
 
 <p>Now, we have three groups of facilities: core downtown facilities, downtown and main streets facilities, and out of core facilities. With these three groups of facilities, we can implement the 3 year phase-wise plan for map roll-out. For each group of facilities we can then use KMeans clustering algorithm to further clustering them into small groups and then we can put a map near the centroid of each cluster of facilities.</p>
