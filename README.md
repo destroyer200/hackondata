@@ -13,14 +13,12 @@ TranQuant, flipp, wattpad, LoyaltyOne, amazon, Lightbend, GuruLink, Shopify
 **Partners**  
 Toronto Apache Spark, scalator, Deep Learning Toronto, HackerNest, HacherNest Toronto Tech Socials, TechToronto, DMZ, City of Toronto, Toronto Public Library
 
-
 # 0 Solution Notebooks
-
 The solution is implemented in both Python and Spark (PySpark API). The solution notebooks are publicly availabel on my Github repository and on Databricks.
 
 * Python Solution
+  - <a href="http://nbviewer.jupyter.org/github/XIEQ/hackondata/blob/master/Map_Placement_City_of_Toronto.ipynb"> View complete solution notebook through nbviewer</a>
   - [Python solution notebook on my Github](https://github.com/XIEQ/hackondata/blob/master/Map_Placement_City_of_Toronto.ipynb)
-  - <a href="http://nbviewer.jupyter.org/github/XIEQ/hackondata/blob/master/Map_Placement_City_of_Toronto.ipynb"> Or you can view complete solution notebook through nbviewer</a>
   
 * Spark solution was done using Databricks Community Edition, and the Databricks notebooks are available here:
   - [Databricks Notebook 0: Project Overview](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8891646194974755/2498144867240658/6439822263820045/latest.html)
@@ -30,11 +28,8 @@ The solution is implemented in both Python and Spark (PySpark API). The solution
   - [Databricks Notebook 4: KMeans Clustering](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8891646194974755/2498144867240858/6439822263820045/latest.html)
   - [Databricks Notebook 5: Map Placement Based on Clustering](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8891646194974755/2498144867240666/6439822263820045/latest.html)
 
-
-
 # 1 Project Overview
 ## 1.1 Background and Motivation
-
 In 2011, City of Toronto launched the TO360 Wayfinding Project. The integrated multi-modal wayfinding strategy is comprised of pedestrian, vehicular, cycling and transit wayfinding. The project is aimed to:
 * Enhance the overall image of Toronto as a destination
 * Increase visitors at key attractions, spending in the Greater Toronto Area, boost the local economy
@@ -65,12 +60,10 @@ Right now, the project in in phase 3. In determining where wayfinding products a
 * city divisions
 * tourism organizations
 
-
 ## 1.2 Objectives
 For the **HackOn(Data)** event, City of Toronto have an interest in exploring a more data-driven methodology to determine the timing and geographic distribution of the required TO360 map assest upgrades. The data-driven methodology may help gain valuable insights from a different and novel perspective and help domain experts to make more effective and reliable map placement plan.
 
 **Reference**: [Toronto Wayfinding Strategy](http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=8057524d63f02410VgnVCM10000071d60f89RCRD&vgnextchannel=d90d4074781e1410VgnVCM10000071d60f89RCRD)
-
 
 ## 1.3 Our Approach
 We choose an exploratory approach for this problem. We are not aiming to find a "perfect" solution by considering all needs and using all the available data. Instead, our goal is to build a prototype model using the a few of the most important data sources (provided by [TranQuant](http://tranquant.com/) and [City of Toronto Open Data](http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=9e56e03bb8d1e310VgnVCM10000071d60f89RCRD)). If we can gain insights from the solution and the methodology is actionable, we can refine the prototype methodology by taking into consideration more needs, incorporating more data sources, and using more advanced algorithms.
@@ -96,7 +89,6 @@ I tried two clustering algorithms: DBSCAN and KMeans. DBSCAN is density-based cl
 
 At this stage, I adopted KMeans algorithm. KMeans works better to spatially evenly divide our facilities into clusters according to their geographic coordinates. DBSCAN can provide another perspective of looking at the problem and we can explore that angle in the future.
 
-
 # 2 Data
 * Pedestrian and Vehicle Volume Data of Major Intersections
   - `ped_vol_2012.csv`: pedestrian and vehicle volume data collected at some intersections in 2012 
@@ -113,9 +105,7 @@ At this stage, I adopted KMeans algorithm. KMeans works better to spatially even
   - `Make_space_for_culture_wgs84.zip`: with shape files for WGS84 coordinate system and facility file `MAKE_SPACE_FOR_CULTURE_WGS84.dbf`, which contains coordinates for facilities.
   
 
-
 # 3 Exploratory Data Analysis
-
 ## 3.1 Pedestrian and Vehicle Volume Distribution
 In this section, we will check intersection pedestrian and vehicle volume distribution to see what pattern they follows or to see whether there is any `interesting` behavior in the data.
 
@@ -128,12 +118,12 @@ In this section, we will check intersection pedestrian and vehicle volume distri
 #### Intersections
 ![Intersections](./images/intersections.png)
 
-From the graph, we can see the shap of the City of Toronto and main street and how the intersections are disbributed geographically.
+From the graph, we can see the shape of the City of Toronto and main street and how the intersections are distributed geographically.
 
 #### Cultural Facilities
 ![Facilities](./images/facilities.png)
 
-This graphs show us the geographic distribution of cultural facilities according to their coordinates. It is no surprise that cultural facilities are condensed in downtown arear of the City of Toronto.
+This graph shows us the geographic distribution of cultural facilities according to their coordinates. It is no surprise that cultural facilities are condensed in downtown area of the City of Toronto.
 
 
 ## 3.2 DBSCAN Clustering
@@ -149,7 +139,7 @@ The following is a description of DBSCAN algorithm from sklearn:
 
 DBSCAN algorithm clusters dataset based on two parameters:
 
- * **eps** - The max distance between neighbour points to be considerted in a cluster
+ * **eps** - The max distance between neighbor points to be considered in a cluster
 
  *  **min_samples** - the minimum cluster size. If it is set to 1, it means every data point will be assigned to either a cluster or form its own cluster of 1 data point. If `min_sample` is set to be larger than one, then cluster with size less than min_sample will be considered as noise.
 
@@ -175,13 +165,13 @@ Obviously, 20 cluster is not enough. We need a lot more than 20 intersections to
 ### 3.2.2 DBSCAN Clustering with eps = 0.7 km
 ![DBSCAN eps = 1.0 km](./images/DBSCAN_1.0.png)
 
-When we set eps = 0.7, the DBSCAN algorithm groups the facilities into 185 clusters. From the plot we can clearly see that the core of downtown is a huge cluster, accounting for more than half of all facilities, while most other cluster only has one facility. This is not a resonable clustering that we can base on to put maps. Let's try eps = 1.0 km and see if we can get a reasonable result.
+When we set eps = 0.7, the DBSCAN algorithm groups the facilities into 185 clusters. From the plot we can clearly see that the core of downtown is a huge cluster, accounting for more than half of all facilities, while most other cluster only has one facility. This is not a reasonable clustering that we can base on to put maps. Let's try eps = 1.0 km and see if we can get a reasonable result.
 
 
 ### 3.2.3 DBSCAN Clustering with eps = 1.0 km
 ![DBSCAN eps = 0.7 km](./images/DBSCAN_0.7.png)
 
-With eps = 1.0 km, the DBSCAN algorithm groups the facilities into 93 clusters. Again, downtown and middle down facilites are in the same huge cluster, and other facilities are rather nicely grouped. Based on these findings we learned that DBSCAN alone is not good enough for our needs, but it can be used to select the areas where facilities are dense and help implement a phase-wise plan for rolling out maps throughout the City of Toronto.
+With eps = 1.0 km, the DBSCAN algorithm groups the facilities into 93 clusters. Again, downtown and middle down facilities are in the same huge cluster, and other facilities are rather nicely grouped. Based on these findings we learned that DBSCAN alone is not good enough for our needs, but it can be used to select the areas where facilities are dense and help implement a phase-wise plan for rolling out maps throughout the City of Toronto.
 
 
 ## 3.3 DBSCAN for Phase-wise Implementation
@@ -192,14 +182,12 @@ The citywide roll-out of the map placement will be implemented through a 3-year 
 * Year 3: Citywide roll-out of TO360 map
 
 ![Phases](./images/phase_implementation.PNG)
-
 DBSCAN algorithm can help to select the facilities for each phase of implementation.
 
-
 ### 3.3.1 Downtown and Mainstreet Facilities
-Downtown cluster is very condensed, it includes 1064 facilities out of the total 1397 facilities. Let's extract Downtown facilities basen on previous DBSCAN clustering(eps = 1.0 km)
+Downtown cluster is very condensed, it includes 1064 facilities out of the total 1397 facilities. Let's extract Downtown facilities based on previous DBSCAN clustering(eps = 1.0 km)
 
-![Downtown Facilites](./images/downtown_facilities.png)
+![Downtown Facilities](./images/downtown_facilities.png)
 
 
 ### 3.3.2 Downtown Facilities Clustering
@@ -208,15 +196,14 @@ Set eps = 0.4 km to further clustering downtown facilities, and then extract cor
 
 
 ### 3.3.3 Extract Core Downtown Facilities
-![Downtown Clustering](./images/core_downtown_facilities.png)
+![Core Downdown Facilities](./images/core_downtown_facilities.png)
 
 There are 655 facilities in the core of downtown Toronto
 
-Now, we have three groups of facilities: core downtown facilities, downtown and main streets facilities, and out of core facilities. With these three groups of facilities, we can implement the 3 year phase-wise plan for map roll-out. For each group of facilites we can then use KMeans clustering algorithm to further clustering them into small groups and then we can put a map near the centroid of each cluster of facilities.
+Now, we have three groups of facilities: core downtown facilities, downtown and main streets facilities, and out of core facilities. With these three groups of facilities, we can implement the 3 year phase-wise plan for map roll-out. For each group of facilities we can then use KMeans clustering algorithm to further clustering them into small groups and then we can put a map near the centroid of each cluster of facilities.
 
 **Note**  
 In current solution, we did not applied KMeans clustering to each of the three groups. Instead, we applied KMeans to the entire facility dataset to make a quick prototype. In future improvement, we can apply KMeans clustering to each of the three groups of facilities.
-
 
 ## 3.4 KMeans Clustering
 In this section, we use KMeans clustering algorithm to group cultural facilities according to their geographic coordinates.
@@ -233,7 +220,7 @@ From the above plot we can see that 200 clusters might not be enough because the
 ![KMeans 300 clusters](./images/Kmeans_300.png)
 We will use 300 clusters as the prototype for later selection of intersections for map placement.
 
-The following is plot of intersections and the 300 facility cluster centroids.The small blue dots represent intersections, the big black dots represent facility cluster centroids. Our goal now is to find the closet intersection for each cluster centroid. We are going to find a proper intersection for each of the centroid to place map.
+The following is plot of intersections and the 300 facility cluster centroids. The small blue dots represent intersections, the big black dots represent facility cluster centroids. Our goal now is to find the closet intersection for each cluster centroid. We are going to find a proper intersection for each of the centroid to place map.
 ![Facility Centroids and Intersections](./images/fac_centroids_and_intersections.png)
 
 
@@ -247,12 +234,10 @@ We compared two cases:
 **KDTree Algorithm**   
 To find the closest intersection to a cluster centroid, we will use KDTree algorithm.
 
-
 ## 4.1 Case1: Only Consider Distance
 ![Selected Intersections for Map Placement When Only Consider Distance](./images/selected_intersections_dist_only.png)
 
 If we only consider distance, the average 8 hour pedestrian volume is 11246.8 for the select 296 intersections
-
 
 ## 4.2 Case 2: Consider Both Distance and Pedestrian Volume
 ![Selected Intersections for Map Placement When Consider Distance and Pedestrian Volume](./images/selected_intersections_dist_vol.png)
