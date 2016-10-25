@@ -14,7 +14,7 @@ TranQuant, flipp, wattpad, LoyaltyOne, amazon, Lightbend, GuruLink, Shopify
 Toronto Apache Spark, scalator, Deep Learning Toronto, HackerNest, HacherNest Toronto Tech Socials, TechToronto, DMZ, City of Toronto, Toronto Public Library
 
 # 0 Solution Notebooks
-The solution is implemented in both Python and Spark (PySpark API). The solution notebooks are publicly availabel on my Github repository and on Databricks.
+The solution is implemented in both Python and Spark (PySpark API). The solution notebooks are publicly available on my Github repository and on Databricks.
 
 * Python Solution
   - <a href="http://nbviewer.jupyter.org/github/XIEQ/hackondata/blob/master/Map_Placement_City_of_Toronto.ipynb"> View complete solution notebook through nbviewer</a>
